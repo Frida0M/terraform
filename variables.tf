@@ -1,13 +1,17 @@
 variable "instance_name" {
     type = string
     description = "nombre de la instancia"
+    default = "nombre predeterminado"
 }
-varible "subnet_id" {
+
+variable "network_name" {
     type = string
-    description = "id de la subred"
+    description = "nombre de la red"
+    sensitive = true
 }
 
 varible "instance_type" {
     type = string
     description = "tipo de instancia"
+    default = "t2.nano"
 }
