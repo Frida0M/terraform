@@ -16,6 +16,12 @@ module "network" {
   source = "./modules/network"
   vpc_name = var.network_name
 }
+module "subnet" {
+  source = "./modules/subnet"
+  vpc_id = module.network.vpc_id
+  subnet_cidr_block = module.subnet.cidr_block
+}
+
 module "instance" {
   source = "./modules/instances"
   instance_name = var.instance_name
